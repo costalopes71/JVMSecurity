@@ -1,0 +1,11 @@
+================================================
+JVM SECURITY
+================================================
+
+Para habilitar o Security Manager default posso fazer isso programaticamente ou atraves de um argumento para a JVM:
+
+1) java -Djava.security.manager -cp . <classe_a_ser_executada>   == habilita o security manager default
+
+Para adicionar permissao devo editar o arquivo java.policy que fica no diretorio onde o java foi instalado. Para mim por exemplo fica em /usr/lib/jvm/java-1.8.0-opensdk/jre/lib/security e adicionar a permissao, no caso de escrita em um arquivo por exemplo posso adicionar adicionando a seguinte linha na seção grant:
+	permission java.io.FilePermission "<path_para_o_arquivo>", "write";
+
