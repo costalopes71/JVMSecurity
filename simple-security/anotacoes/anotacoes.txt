@@ -8,4 +8,15 @@ Para habilitar o Security Manager default posso fazer isso programaticamente ou 
 
 Para adicionar permissao devo editar o arquivo java.policy que fica no diretorio onde o java foi instalado. Para mim por exemplo fica em /usr/lib/jvm/java-1.8.0-opensdk/jre/lib/security e adicionar a permissao, no caso de escrita em um arquivo por exemplo posso adicionar adicionando a seguinte linha na seção grant:
 	permission java.io.FilePermission "<path_para_o_arquivo>", "write";
+	
+Nao eh uma boa pratica ficar editando o arquivo de policy padrao. Por isso podemos usar um proprio da aplicacao. 
+Existe duas maneiras para usar um proprio, sobreescrever o arquivo policy por um totalmente novo, ou apenas aumentar as permissoes do já existente com um arquivo novo tbm.
 
+	Override policy file:
+		java -Djava.security.manager -Djava.security.policy==meu_arquivo_policy_usando_override -cp . com.costalopes.Main 
+
+	Agument policy file:
+		java -Djava.security.manager -Djava.security.policy=meu_arquivo_policy_usando_agument -cp . com.costalopes.Main
+		
+No override eu posso copiar todo o arquivo de policy padrao do java e por mais permissoes ou retirar alguma.
+No agument eu faco um simples arquivo que tenha as permissoes que eu quero adicionar.

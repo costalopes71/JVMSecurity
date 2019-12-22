@@ -1,0 +1,5 @@
+grant {
+		permission java.util.PropertyPermission "user.home", "read";
+		permission java.io.FilePermission "${user.home}${/}Documentos${/}teste_escrita.txt", "write";
+};
+
