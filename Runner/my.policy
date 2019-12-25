@@ -1,0 +1,11 @@
+grant codeBase "file:/media/16AC8619AC85F391/workspaces/Pluralsight_workspaces/JVMSecurity_workspace/jars/data_access.jar" {
+	permission java.io.FilePermission "/home/joao/Documentos/message.txt", "write";
+}
+
+grant codeBase "file:/media/16AC8619AC85F391/workspaces/Pluralsight_workspaces/JVMSecurity_workspace/jars/data_service.jar" {
+	permission java.io.FilePermission "/home/joao/Documentos/message.txt", "write";
+}
+
+grant codeBase "file:/media/16AC8619AC85F391/workspaces/Pluralsight_workspaces/JVMSecurity_workspace/Runner/bin/*" {
+	permission java.io.FilePermission "/home/joao/Documentos/message.txt", "write";
+}
